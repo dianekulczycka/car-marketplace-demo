@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "be83d7a3-6be4-4f45-9f50-6b86d3acfa94",
+		"name": "POST LISTING SERVICE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37153193"
+	},
+	"item": [
+		{
+			"name": "GETTING ALL POSTS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/v1/api/posts/",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"v1",
+						"api",
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GETTING POST BY ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/v1/api/posts/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"v1",
+						"api",
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AVG PRICE BY REGION",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/v1/api/posts/avg-price/KYIVSKA",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"v1",
+						"api",
+						"posts",
+						"avg-price",
+						"KYIVSKA"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATING A POST",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkbWluQGFkbWluLmNvbSIsImlhdCI6MTczMjc0MzA4MiwiZXhwIjoxNzMyNzQ2NjgyfQ.cP9NzCuQkFB3wMI6mQw63yw2EbEISQ9wY6qCLVeYFdM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"carYear\": 2012,\r\n        \"carMake\": \"TOYOTA\",\r\n        \"carModel\": \"rav4\",\r\n        \"sellingRegion\": \"KYIVSKA\",\r\n        \"currency\": \"USD\",\r\n        \"price\": 7000,\r\n        \"description\": \"COOL CAR!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8082/v1/api/posts/",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"v1",
+						"api",
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATING A POST",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"carYear\": 2012,\r\n        \"carMake\": \"TOYOTA\",\r\n        \"carModel\": \"rav4\",\r\n        \"sellingRegion\": \"ODESKA\",\r\n        \"currency\": \"USD\",\r\n        \"price\": 12000.0,\r\n        \"description\": \"COOL CAR!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8082/v1/api/posts/",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"v1",
+						"api",
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETING A POST",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/v1/api/posts/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"v1",
+						"api",
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

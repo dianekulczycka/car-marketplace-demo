@@ -1,0 +1,28 @@
+package org.example.postlistingservice.enums;
+
+public enum SellingRegion {
+    CHERKASKA,
+    CHERNIHIVSKA,
+    CHERNIVETSKA,
+    CRIMEA,
+    DNIPROPETROVSKA,
+    DONETSKA,
+    IVANOFRANKIVSKA,
+    KYIVSKA,
+    KYROVOHRADSKA,
+    KHERSONSKA,
+    KHMELNYTSKA,
+    LUHANSKA,
+    LVIVSKA,
+    MYKOLAIVSKA,
+    ODESKA,
+    POLTAVSKA,
+    RIVNESKA,
+    SUMSKA,
+    TERNOPILSKA,
+    VINNYTSKA,
+    VOLYNSKA,
+    ZAKARPATSKA,
+    ZAPORIZHSKA,
+    ZHYTOMYRSKA
+}

@@ -1,0 +1,102 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1.0.1
+      author: dina_k
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: user_id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar(255)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: password
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: full_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: phone_number
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: role
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: account_type
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: registration_date
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: is_shown
+                  type: tinyint(1)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 1.0.2
+      author: dina_k
+      changes:
+        - addColumn:
+            tableName: users
+            columns:
+              - column:
+                  name: post_count
+                  type: int
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 1.0.3
+      author: dina_k
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: email
+                  value: ${ADMIN_EMAIL}
+              - column:
+                  name: password
+                  value: ${ADMIN_PASSWORD}
+              - column:
+                  name: full_name
+                  value: "admin"
+              - column:
+                  name: phone_number
+                  value: ${ADMIN_PHONE_NUMBER}
+              - column:
+                  name: role
+                  value: "ROLE_ADMIN"
+              - column:
+                  name: account_type
+                  value: "PREMIUM"
+              - column:
+                  name: registration_date
+                  valueDate: "2024-01-01T00:00:00"
+              - column:
+                  name: is_shown
+                  value: 0
+              - column:
+                  name: post_count
+                  value: 0

@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1.0.1
+      author: dina_k
+      changes:
+        - createTable:
+            tableName: posts_stats
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: post_id
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: views
+                  type: int
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 1.0.2
+      author: dina_k
+      runOnChange: true
+      changes:
+        - sql:
+            sql: |
+              ALTER TABLE posts_stats MODIFY id INT AUTO_INCREMENT;

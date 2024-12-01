@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "7bee729a-506d-4619-a6f1-a298688ccfc7",
+		"name": "AUTH SERVICE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37153193"
+	},
+	"item": [
+		{
+			"name": "SIGNING UP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ivanovivan98@gmail.com\",\r\n    \"password\": \"password1\",\r\n    \"fullName\": \"Ivan Іванов\",\r\n    \"phoneNumber\": \"+380123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/v1/api/auth/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"api",
+						"auth",
+						"signup"
+					]
+				},
+				"description": "### **Request body** (JSON):\n\n#### String email:\n\nregex - ^\\[a-zA-Z0-9_+&\\*-\\]+(?:\\\\\\\\.\\[a-zA-Z0-9_+&\\*-\\]+)\\*@(?:\\[a-zA-Z0-9-\\]+\\\\\\\\.)+\\[a-zA-Z\\]{2,}$\n\ne.g.: [<i>ivanovivan98@gmail.com</i>](https://mailto:ivanovivan@gmail.com)\n\n#### String password:\n\nmust be 2-16 symbols, containing at least one number, no cyrillic letters\n\ne.g.: _password1_\n\n#### String fullName:\n\n2-32 letters, either latin or cyrillic, no other symbols except dash (-) or whitespace\n\ne.g.: _Ivan Ivanov_\n\n#### String phoneNumber:\n\nmust start with +380, 380, or 0 and contain 9 digits\n\ne.g.: _+380123456789_\n\n### **Expected response** (JSON):\n\n##### Long userId\n\n##### String email\n\n##### Role role = \"SELLER\"\n\n##### AccountType accountType = \"DEFAULT\"\n\n##### localDateTime registrationDate"
+			},
+			"response": []
+		},
+		{
+			"name": "LOGGING IN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ivanovivan98@gmail.com\",\r\n    \"password\": \"password1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/v1/api/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"api",
+						"auth",
+						"login"
+					]
+				},
+				"description": "### Request body (JSON):\n\n##### String email\n\n##### String password\n\n### Expected response (JSON):\n\n##### String acessToken\n\n##### String refreshToken"
+			},
+			"response": []
+		},
+		{
+			"name": "LOGGING IN AS ADMIN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@admin.com\",\r\n    \"password\": \"PbkvY%0)nU&?O[p1O40<<]gX+/,z>p]8y@)2$Y{L{nBN;,_iLe\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/v1/api/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"api",
+						"auth",
+						"login"
+					]
+				},
+				"description": "### Request body (JSON):\n\n##### String email\n\n##### String password\n\n### Expected response (JSON):\n\n##### String acessToken\n\n##### String refreshToken"
+			},
+			"response": []
+		},
+		{
+			"name": "REFRESHING A TOKEN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"refreshToken\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzI1NDAwMTUsImV4cCI6MTczMjYyNjQxNX0.BKaPyDo0qxPtyHwC3Tj8YX-LwWGn9gIeS0GzNYdYY5s\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/v1/api/auth/refresh-token",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"api",
+						"auth",
+						"refresh-token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

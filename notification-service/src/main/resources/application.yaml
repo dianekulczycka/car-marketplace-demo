@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: notification_service
+  datasource:
+    url: "jdbc:mysql://localhost:3306/car_marketplace_demo"
+    username: "admin"
+    password: "password"
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: true
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+  kafka:
+    consumer:
+      group-id: notification-service-listener
+      bootstrap-servers: localhost:9092
+      key-deserializer: org.apache.kafka.common.serialization.IntegerDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: test@gmail.com  # pls fill in your test data
+    password: password  # pls fill in your test data
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+logging:
+  level:
+    sun:
+      rmi:
+        transport:
+          tcp: OFF
+server:
+  port: 8084

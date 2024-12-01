@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "d36ce4ba-c82c-4855-a878-d70bf29721d8",
+		"name": "USER SERVICE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37153193"
+	},
+	"item": [
+		{
+			"name": "GETTING ALL USERS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/v1/api/users/",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"api",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GETTING USER BY ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/v1/api/users/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"api",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GETTIING USER BY EMAIL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/v1/api/users/ivanovivan98@gmail.com",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"api",
+						"users",
+						"ivanovivan98@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADMIN/MANAGER ACTION - DELETING USER",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkbWluQGFkbWluLmNvbSIsImlhdCI6MTczMjU2NDg0OSwiZXhwIjoxNzMyNTY4NDQ5fQ.CTnbLE-esEWe1yzhDPDmYVbRP6TqjYtMfPRsUfZJtt4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/v1/api/users/7",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"api",
+						"users",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADMIN/MANAGER ACTION - UPDATING USER",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1NFTExFUiJdLCJzdWIiOiJpdmFub3ZpdmFuNjY2NjY2NjY2NjY2NjY2NjY2Njk4QGdtYWlsLmNvbSIsImlhdCI6MTczMjU1MzQ2NSwiZXhwIjoxNzMyNTU3MDY1fQ.uxE8NBb5NcroE0MuQGCmCOJdnDidjIl1JxHlzrs9t00",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"userId\": 7,\r\n        \"email\": \"ivanovivadfgdfgfdn666666666666666666698@gmail.com\",\r\n        \"fullName\": \"Ivan Іванов\",\r\n        \"phoneNumber\": \"+380123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/v1/api/users/",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"api",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

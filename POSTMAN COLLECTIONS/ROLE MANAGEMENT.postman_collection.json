@@ -1,0 +1,51 @@
+{
+	"info": {
+		"_postman_id": "0de83529-080a-4a23-9dc3-0bca96484c1b",
+		"name": "ROLE MANAGEMENT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37153193"
+	},
+	"item": [
+		{
+			"name": "CHANGING USER ROLE",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkbWluQGFkbWluLmNvbSIsImlhdCI6MTczMjcyMTgyMywiZXhwIjoxNzMyNzI1NDIzfQ.mRUHTyn3OMSzRNgyCC7qlCkrvO-W2Z9RjTNTDqXeJ98",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"oldRole\": \"ROLE_SELLER\",\r\n    \"newRole\": \"ROLE_MANAGER\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8083/v1/api/roles/update/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"v1",
+						"api",
+						"roles",
+						"update",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1.0.1
+      author: dina_k
+      changes:
+        - createTable:
+            tableName: managers
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: email
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+                    unique: true

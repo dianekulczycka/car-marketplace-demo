@@ -1,0 +1,74 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1.0.1
+      author: dina
+      changes:
+        - createSequence:
+            sequenceName: "posts_seq"
+        - createTable:
+            tableName: "posts"
+            columns:
+              - column:
+                  name: post_id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: car_year
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: car_make
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: car_model
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: selling_region
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: currency
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: DOUBLE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: views
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: user_email
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 1.0.2
+      author: dina_k
+      changes:
+        - addColumn:
+            tableName: posts
+            columns:
+              - column:
+                  name: status
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
