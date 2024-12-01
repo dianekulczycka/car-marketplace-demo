@@ -27,4 +27,4 @@ logging:
         transport:
           tcp: OFF
 server:
-  port: 8083
+  port: 8084

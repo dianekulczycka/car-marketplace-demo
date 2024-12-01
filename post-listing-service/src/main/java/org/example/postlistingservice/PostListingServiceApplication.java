@@ -5,13 +5,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CarListingServiceApplication {
+public class PostListingServiceApplication {
     public static void main(String[] args) {
         Dotenv dotenv = Dotenv.load();
         dotenv.entries().forEach(entry -> {
             System.setProperty(entry.getKey(), entry.getValue());
         });
-        SpringApplication.run(CarListingServiceApplication.class, args);
+        SpringApplication.run(PostListingServiceApplication.class, args);
     }
 
 }

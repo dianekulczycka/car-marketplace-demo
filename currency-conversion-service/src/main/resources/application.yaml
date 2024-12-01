@@ -7,4 +7,4 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.IntegerSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 server:
-  port: 8085
+  port: 8080
